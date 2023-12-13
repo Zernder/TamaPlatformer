@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://dh6khpto244dy"]
+
+[ext_resource type="Script" path="res://Scenes/Code/Game.gd" id="1_e5sxg"]
+[ext_resource type="PackedScene" uid="uid://brqjfpxl84ib2" path="res://Scenes/Levels/start.tscn" id="2_eickv"]
+[ext_resource type="PackedScene" uid="uid://il6hk86hj1jb" path="res://Scenes/Levels/Pause.tscn" id="3_82ou7"]
+[ext_resource type="PackedScene" uid="uid://dmnxcnc5m15bp" path="res://Scenes/Levels/Forest(Level1).tscn" id="4_4cjgc"]
+[ext_resource type="Script" path="res://Scenes/Levels/Forest(Level1).gd" id="5_mxk64"]
+
+[node name="Game" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_e5sxg")
+
+[node name="Start" parent="." instance=ExtResource("2_eickv")]
+visible = false
+
+[node name="Pause Menu" parent="." instance=ExtResource("3_82ou7")]
+visible = false
+
+[node name="Forest" parent="." instance=ExtResource("4_4cjgc")]
+visible = false
+script = ExtResource("5_mxk64")

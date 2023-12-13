@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5xtf53x2acsy"]
+
+[ext_resource type="Script" path="res://Platformer/Scenes/MobileControl.gd" id="1_dbyks"]
+[ext_resource type="Texture2D" uid="uid://c4hvqdxn8gavt" path="res://Assets/Buttons/Arrow.png" id="1_tb70w"]
+[ext_resource type="Texture2D" uid="uid://clmxv84d33vht" path="res://Assets/Buttons/Purple Menu Button.png" id="2_s71dd"]
+
+[node name="MobileControl" type="CanvasLayer"]
+script = ExtResource("1_dbyks")
+
+[node name="Left and Right" type="HBoxContainer" parent="."]
+grow_vertical = 0
+
+[node name="Left" type="TouchScreenButton" parent="Left and Right"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(141, 569)
+rotation = 3.14159
+scale = Vector2(0.257806, 0.257806)
+texture_normal = ExtResource("1_tb70w")
+passby_press = true
+action = "left"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="Left and Right"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(250, 445)
+scale = Vector2(0.270464, 0.270464)
+texture_normal = ExtResource("1_tb70w")
+passby_press = true
+action = "right"
+visibility_mode = 1
+
+[node name="Jump" type="TouchScreenButton" parent="Left and Right"]
+modulate = Color(1, 1, 1, 0.211765)
+position = Vector2(1020, 646)
+rotation = -1.5708
+scale = Vector2(0.310392, 0.274589)
+texture_normal = ExtResource("1_tb70w")
+action = "jump"
+visibility_mode = 1
+
+[node name="Pause" type="TouchScreenButton" parent="Left and Right"]
+modulate = Color(1, 1, 1, 0.588235)
+position = Vector2(1025, 2)
+scale = Vector2(0.121094, 0.119141)
+texture_normal = ExtResource("2_s71dd")
+passby_press = true
+action = "ui_cancel"
+visibility_mode = 1
+
+[node name="down" type="TouchScreenButton" parent="Left and Right"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(260, 533.98)
+rotation = 1.5708
+scale = Vector2(0.27, 0.27)
+texture_normal = ExtResource("1_tb70w")
+action = "down"
+
+[node name="up" type="TouchScreenButton" parent="Left and Right"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(130, 476)
+rotation = 4.71239
+scale = Vector2(0.27, 0.27)
+texture_normal = ExtResource("1_tb70w")
+action = "up"
