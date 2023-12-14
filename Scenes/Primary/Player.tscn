@@ -164,7 +164,7 @@ visible = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_f05lv")
-animation = &"idle"
+animation = &"walkright"
 
 [connection signal="area_entered" from="CollectionBubble" to="." method="CollectionBubble"]
 [connection signal="timeout" from="CollectionBubble/Timer" to="." method="RespawnTimer"]
