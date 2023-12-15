@@ -5,8 +5,6 @@ var target: Marker2D
 var markers: Array
 var start_pos: Vector2 = Vector2()
 var velocity: Vector2 = Vector2()
-@onready var Player = $"../../../Player"
-@onready var Respawn = $"../../../RespawnPoint"
 var current_marker_index = 0
 
 func _ready():
@@ -35,7 +33,3 @@ func _process(delta):
 	if position.distance_to(get_target_position()) < 10:
 		current_marker_index = 1 - current_marker_index
 		target = markers[current_marker_index]
-
-func deferred_change_scene(scene_path: String):
-	get_tree().change_scene_to_file(scene_path)
-

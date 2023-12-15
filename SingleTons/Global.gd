@@ -3,6 +3,9 @@ extends Node2D
 var answer = true
 var Enemies_slain = false
 var speed = 0
+var PlayerLevelComplete = 0
+
+
 
 # menu Buttons
 @onready var MainMenu = "res://Scenes/Menu's/MainMenu.tscn"
@@ -25,4 +28,5 @@ func _ready():
 	
 func _physics_process(_delta):
 	pass
+	
 

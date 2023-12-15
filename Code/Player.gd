@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-@onready var Respawn = $"../RespawnPoint"
+@onready var Spawn = $"../Spawn"
 @onready var anim = $AnimatedSprite2D
-@onready var timer = $CollectionBubble/Timer
+@onready var player = $"."
+@onready var timer = $HitBox/Timer
 
 var jump_velocity = -350.0
 var double_jump_velocity = -400.0
@@ -20,6 +21,7 @@ func _ready():
 	timer.one_shot = true
 
 
+# Movement and Animation Code
 
 func _physics_process(delta):
 	jump(delta)
@@ -27,7 +29,8 @@ func _physics_process(delta):
 	Sprint()
 	Pause()
 	move_and_slide()
-
+	
+	
 func Movement():
 	var direction = Input.get_axis("left", "right")
 	
@@ -69,8 +72,6 @@ func Pause():
 
 
 func RespawnTimer():
-	show()
-	# Reset any necessary player states (health, inventory, etc.)
 	Global.speed = 250
 	jump_velocity = -350
 
@@ -80,10 +81,9 @@ func CollectionBubble(area):
 		Strawberry += 1
 		area.queue_free()
 	get_node("HBoxContainer/StrawberryCounter").text = str(Strawberry)
-	
+
+func HitBox(area):
 	if area.is_in_group("Hazards"):
-		Global.speed = 0
-		jump_velocity = 0
-		timer.start()
 		hide()
-		position = Respawn.position
+		player.position = Spawn.position
+		show()

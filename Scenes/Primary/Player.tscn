@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_x1wt7"]
 [ext_resource type="Texture2D" uid="uid://c45r0ymk0dvfv" path="res://Assets/Fruit/Strawberry.png" id="3_orfwl"]
-[ext_resource type="PackedScene" uid="uid://b5xtf53x2acsy" path="res://Scenes/Primary/MobileControl.tscn" id="5_8a2gi"]
 [ext_resource type="Texture2D" uid="uid://bgxilmq0g55af" path="res://Assets/Sprites/Tama.png" id="5_rne1y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nidc4"]
+radius = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bmxf"]
 atlas = ExtResource("5_rne1y")
@@ -107,7 +109,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 light_mask = 3
 visibility_layer = 3
 y_sort_enabled = true
@@ -120,8 +122,9 @@ limit_left = 0
 limit_top = 0
 limit_bottom = 699
 limit_smoothed = true
+drag_horizontal_enabled = true
 
-[node name="HitBox" type="CollisionPolygon2D" parent="."]
+[node name="Collision" type="CollisionPolygon2D" parent="."]
 visible = false
 light_mask = 3
 y_sort_enabled = true
@@ -148,23 +151,25 @@ texture = ExtResource("3_orfwl")
 hframes = 23
 
 [node name="CollectionBubble" type="Area2D" parent="."]
-visible = false
 y_sort_enabled = true
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="CollectionBubble"]
-polygon = PackedVector2Array(2, 16, 6, 16, 6, 14, 8, 14, 8, 12, 8, 4, 6, 2, 6, -4, 4, -6, -4, -6, -6, -4, -6, 0, -6, 2, -8, 2, -8, 10, -4, 10, -4, 14, 0, 14)
-
-[node name="Timer" type="Timer" parent="CollectionBubble"]
-one_shot = true
-
-[node name="MobileControl" parent="." instance=ExtResource("5_8a2gi")]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionBubble"]
+shape = SubResource("CircleShape2D_nidc4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_f05lv")
-animation = &"walkright"
+animation = &"idle"
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="HitBox"]
+polygon = PackedVector2Array(2, 16, 10, 16, 10, 4, 10, -10, -8, -10, -8, 16)
+
+[node name="Timer" type="Timer" parent="HitBox"]
+one_shot = true
 
 [connection signal="area_entered" from="CollectionBubble" to="." method="CollectionBubble"]
-[connection signal="timeout" from="CollectionBubble/Timer" to="." method="RespawnTimer"]
+[connection signal="area_entered" from="HitBox" to="." method="HitBox"]
+[connection signal="timeout" from="HitBox/Timer" to="." method="RespawnTimer"]

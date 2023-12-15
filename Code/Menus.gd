@@ -23,6 +23,8 @@ func ExitGame():
 
 # Levels
 
+@onready var pos = Vector2.ZERO
+
 func LevelOne():
 	get_tree().change_scene_to_file(Global.LevelOne)
 
