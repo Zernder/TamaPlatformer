@@ -5,9 +5,6 @@ extends CharacterBody2D
 @onready var player = $"."
 @onready var timer = $HitBox/Timer
 
-var jump_velocity = -350.0
-var double_jump_velocity = -400.0
-var has_double_jumped : bool = false
 var Strawberry = 0
 var death = 0
 
@@ -50,7 +47,11 @@ func Sprint():
 	else:
 		Global.speed = 150
 	
-	
+
+var jump_velocity = -350.0
+var double_jump_velocity = -400.0
+var has_double_jumped : bool = false
+
 func jump(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -85,5 +86,5 @@ func CollectionBubble(area):
 func HitBox(area):
 	if area.is_in_group("Hazards"):
 		hide()
-		player.position = Spawn.position
+		player.global_position = Spawn.global_position
 		show()

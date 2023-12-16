@@ -170,6 +170,11 @@ polygon = PackedVector2Array(2, 16, 10, 16, 10, 4, 10, -10, -8, -10, -8, 16)
 [node name="Timer" type="Timer" parent="HitBox"]
 one_shot = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="area_entered" from="CollectionBubble" to="." method="CollectionBubble"]
 [connection signal="area_entered" from="HitBox" to="." method="HitBox"]
 [connection signal="timeout" from="HitBox/Timer" to="." method="RespawnTimer"]
+[connection signal="timeout" from="Timer" to="." method="AirJumpReset"]

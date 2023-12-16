@@ -7,18 +7,16 @@ func LevelOneComplete(_area):
 
 
 func LevelTwoComplete(_area):
-	get_tree().change_scene_to_file(Global.MainMenu)
+	get_tree().change_scene_to_file(Global.LevelThree)
 
 
 func LevelThreeComplete(_area):
-	pass
+	get_tree().change_scene_to_file(Global.MainMenu)
 
 
-func Part1Complete(_area):
-	$Player.global_position = $part2Start/StartOneTwo.global_position
-
-func Part2Start(_area):
-	$Player.global_position = $Spawn.global_position
-	
+func Part1(_area):
+	$Player.global_position = $part2/parttwo.global_position
 
 
+func part2(_area):
+	$Player.global_position = $part1/partone.global_position

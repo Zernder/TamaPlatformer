@@ -6,24 +6,22 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_siffo"]
 radius = 13.0384
 
-[node name="SpikeBall" type="Node2D" groups=["Hazards"]]
+[node name="SpikeBall" type="Node2D"]
 z_index = 4
 y_sort_enabled = true
 script = ExtResource("1_5k787")
 
-[node name="SpikeBall Collision" type="Area2D" parent="." groups=["Hazards"]]
+[node name="Hitbox" type="Area2D" parent="." groups=["Hazards"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeBall Collision" groups=["Hazards"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" groups=["Hazards"]]
 light_mask = 3
 visibility_layer = 3
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_siffo")
 
-[node name="Sprite2D" type="Sprite2D" parent="." groups=["Hazards"]]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture = ExtResource("2_dy2kt")
-
-[connection signal="area_entered" from="SpikeBall Collision" to="." method="_on_area_2d_area_entered"]

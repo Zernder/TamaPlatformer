@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.2", "Mobile")
 
 [autoload]
 
-Global="*res://SingleTons/Global.gd"
+Global="*res://Singletons/Global.gd"
 
 [input]
 
