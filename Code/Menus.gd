@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 func _ready():
 	Android()
 
@@ -10,7 +9,6 @@ func Android():
 		show()
 
 # Main Menu
-
 func Start():
 	get_tree().change_scene_to_file(Global.LevelOne)
 
@@ -19,7 +17,6 @@ func LevelSelect():
 
 func ExitGame():
 	get_tree().quit()
-
 
 # Levels
 
@@ -33,5 +30,5 @@ func LevelTwo():
 	get_tree().change_scene_to_file(Global.LevelTwo)
 
 
-
-
+func LevelThree():
+	get_tree().change_scene_to_file(Global.LevelThree)

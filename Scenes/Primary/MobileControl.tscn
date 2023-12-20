@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5xtf53x2acsy"]
+[gd_scene load_steps=5 format=3 uid="uid://b5xtf53x2acsy"]
 
 [ext_resource type="Script" path="res://Code/Menus.gd" id="1_bfebe"]
 [ext_resource type="Texture2D" uid="uid://c4hvqdxn8gavt" path="res://Assets/Buttons/Arrow.png" id="1_tb70w"]
 [ext_resource type="Texture2D" uid="uid://clmxv84d33vht" path="res://Assets/Buttons/Purple Menu Button.png" id="2_s71dd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aoqmd"]
+size = Vector2(250, 100)
 
 [node name="MobileControl" type="CanvasLayer"]
 script = ExtResource("1_bfebe")
@@ -48,20 +51,17 @@ passby_press = true
 action = "ui_cancel"
 visibility_mode = 1
 
-[node name="down" type="TouchScreenButton" parent="Left and Right"]
-visible = false
-modulate = Color(0, 0, 1, 1)
-position = Vector2(219, 520)
-rotation = 1.5708
-scale = Vector2(0.27, 0.27)
-texture_normal = ExtResource("1_tb70w")
-action = "down"
+[node name="Sprint" type="TouchScreenButton" parent="Left and Right"]
+position = Vector2(505, 504)
+shape = SubResource("RectangleShape2D_aoqmd")
+action = "Sprint"
+visibility_mode = 1
 
-[node name="up" type="TouchScreenButton" parent="Left and Right"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Left and Right/Sprint"]
 visible = false
-modulate = Color(0, 0, 1, 1)
-position = Vector2(94, 480)
-rotation = 4.71239
-scale = Vector2(0.27, 0.27)
-texture_normal = ExtResource("1_tb70w")
-action = "up"
+offset_left = -122.0
+offset_top = -44.0
+offset_right = 123.0
+offset_bottom = 43.0
+theme_override_font_sizes/normal_font_size = 70
+text = "Sprint"

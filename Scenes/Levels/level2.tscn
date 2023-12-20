@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdnpvsx1uw8sv"]
+[gd_scene load_steps=15 format=3 uid="uid://bdnpvsx1uw8sv"]
 
 [ext_resource type="Script" path="res://Code/Levels.gd" id="1_0v6yn"]
 [ext_resource type="Texture2D" uid="uid://y17ga32n4k8q" path="res://Assets/Tilesets/Terrain (16x16).png" id="2_8dxoo"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bnmvx03ac2d7p" path="res://Scenes/Objects/strawberry.tscn" id="6_2jp4k"]
 [ext_resource type="PackedScene" uid="uid://ba42eun6ljgrh" path="res://Scenes/Enemies and Hazards/sawblade.tscn" id="7_esgcv"]
 [ext_resource type="Texture2D" uid="uid://c4hvqdxn8gavt" path="res://Assets/Buttons/Arrow.png" id="8_srems"]
-[ext_resource type="PackedScene" uid="uid://c6vqbbwhmdj3n" path="res://Scenes/Enemies and Hazards/SpikeBall.tscn" id="8_v6t7s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lufxl"]
 texture = ExtResource("2_8dxoo")
@@ -2607,72 +2606,23 @@ position = Vector2(-11, 637)
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="SawBlades" type="Node2D" parent="Hazards"]
+z_index = 1
 position = Vector2(-47, -28)
 
 [node name="Sawblade" parent="Hazards/SawBlades" instance=ExtResource("7_esgcv")]
-z_index = 0
-position = Vector2(146, 36)
-
-[node name="A" type="Marker2D" parent="Hazards/SawBlades/Sawblade"]
-position = Vector2(0, 1)
-
-[node name="B" type="Marker2D" parent="Hazards/SawBlades/Sawblade"]
-position = Vector2(-5, 621)
+position = Vector2(315, 530)
 
 [node name="Sawblade2" parent="Hazards/SawBlades" instance=ExtResource("7_esgcv")]
-z_index = 0
-position = Vector2(317, 531)
-
-[node name="A" type="Marker2D" parent="Hazards/SawBlades/Sawblade2"]
-
-[node name="B" type="Marker2D" parent="Hazards/SawBlades/Sawblade2"]
-position = Vector2(0, 77)
+position = Vector2(480, 532)
 
 [node name="Sawblade3" parent="Hazards/SawBlades" instance=ExtResource("7_esgcv")]
-z_index = 0
-position = Vector2(478, 532)
-
-[node name="A" type="Marker2D" parent="Hazards/SawBlades/Sawblade3"]
-position = Vector2(-3, 2)
-
-[node name="B" type="Marker2D" parent="Hazards/SawBlades/Sawblade3"]
-position = Vector2(0, 74)
+position = Vector2(639, 535)
 
 [node name="Sawblade4" parent="Hazards/SawBlades" instance=ExtResource("7_esgcv")]
-z_index = 0
-position = Vector2(638, 532)
+position = Vector2(411, 39)
 
-[node name="A" type="Marker2D" parent="Hazards/SawBlades/Sawblade4"]
-position = Vector2(-1, -2)
-
-[node name="B" type="Marker2D" parent="Hazards/SawBlades/Sawblade4"]
-position = Vector2(0, 72)
-
-[node name="SpikeBalls" type="Node2D" parent="Hazards"]
-
-[node name="SpikeBall" parent="Hazards/SpikeBalls" instance=ExtResource("8_v6t7s")]
-position = Vector2(843, 3)
-
-[node name="A" type="Marker2D" parent="Hazards/SpikeBalls/SpikeBall"]
-
-[node name="B" type="Marker2D" parent="Hazards/SpikeBalls/SpikeBall"]
-position = Vector2(1, 127)
-
-[node name="SpikeBall2" parent="Hazards/SpikeBalls" instance=ExtResource("8_v6t7s")]
-position = Vector2(1335, 283)
-
-[node name="A" type="Marker2D" parent="Hazards/SpikeBalls/SpikeBall2"]
-
-[node name="B" type="Marker2D" parent="Hazards/SpikeBalls/SpikeBall2"]
-position = Vector2(1, 127)
-
-[node name="SpikeBall3" parent="Hazards/SpikeBalls" instance=ExtResource("8_v6t7s")]
-position = Vector2(1094, 272)
-
-[node name="A" type="Marker2D" parent="Hazards/SpikeBalls/SpikeBall3"]
-
-[node name="B" type="Marker2D" parent="Hazards/SpikeBalls/SpikeBall3"]
-position = Vector2(1, 127)
+[node name="Sawblade5" parent="Hazards/SawBlades" instance=ExtResource("7_esgcv")]
+position = Vector2(895, 56)
 
 [node name="ExitArea2" type="Area2D" parent="."]
 position = Vector2(1377, -25)

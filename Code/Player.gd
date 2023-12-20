@@ -11,7 +11,6 @@ var death = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
 func _ready():
 	anim.play("idle")
 	timer.wait_time = 3.0
@@ -19,7 +18,6 @@ func _ready():
 
 
 # Movement and Animation Code
-
 func _physics_process(delta):
 	jump(delta)
 	Movement()
@@ -27,7 +25,7 @@ func _physics_process(delta):
 	Pause()
 	move_and_slide()
 	
-	
+
 func Movement():
 	var direction = Input.get_axis("left", "right")
 	
@@ -66,16 +64,13 @@ func jump(delta):
 			velocity.y = double_jump_velocity
 			has_double_jumped = true
 
-
 func Pause():
 	if Input.is_action_pressed("Pause"):
 		get_tree().paused = true
 
-
 func RespawnTimer():
 	Global.speed = 250
 	jump_velocity = -350
-
 
 func CollectionBubble(area):
 	if area is Strawberry_Class:

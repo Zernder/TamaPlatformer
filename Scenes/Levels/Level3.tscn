@@ -52,7 +52,6 @@ position = Vector2(379, 1086)
 [node name="SawBlades" type="Node2D" parent="Hazards"]
 
 [node name="Sawblade2" parent="Hazards/SawBlades" instance=ExtResource("11_dfm18")]
-position = Vector2(289, -828)
 
 [node name="A" type="Marker2D" parent="Hazards/SawBlades/Sawblade2"]
 position = Vector2(0, -160)
@@ -61,7 +60,6 @@ position = Vector2(0, -160)
 position = Vector2(0, 96)
 
 [node name="Sawblade3" parent="Hazards/SawBlades" instance=ExtResource("11_dfm18")]
-position = Vector2(-43, -951)
 
 [node name="A" type="Marker2D" parent="Hazards/SawBlades/Sawblade3"]
 position = Vector2(0, -93)
@@ -70,7 +68,6 @@ position = Vector2(0, -93)
 position = Vector2(0, 605)
 
 [node name="Sawblade" parent="Hazards/SawBlades" instance=ExtResource("11_dfm18")]
-position = Vector2(-327, -476)
 
 [node name="A" type="Marker2D" parent="Hazards/SawBlades/Sawblade"]
 position = Vector2(0, -572)
@@ -131,16 +128,17 @@ position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_1w3es")
 
 [node name="partone" type="Marker2D" parent="part1"]
-position = Vector2(609, 576)
+position = Vector2(558, 585)
 
 [node name="part2" type="Area2D" parent="."]
-position = Vector2(1048, 600)
+position = Vector2(1048, 601)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="part2"]
+position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_34r2d")
 
 [node name="parttwo" type="Marker2D" parent="part2"]
-position = Vector2(-583, -574)
+position = Vector2(-566, -576)
 
 [node name="Spawn" type="Marker2D" parent="."]
 position = Vector2(36, 57)
