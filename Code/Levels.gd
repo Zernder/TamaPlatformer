@@ -13,6 +13,9 @@ func LevelThreeComplete(_area):
 	get_tree().change_scene_to_file(Global.MainMenu)
 
 
+func ExitToMenu(_area):
+	get_tree().change_scene_to_file(Global.MainMenu)
+
 func Part1(_area):
 	$Player.global_position = $part1/partone.global_position
 

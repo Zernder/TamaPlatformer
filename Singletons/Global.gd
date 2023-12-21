@@ -14,7 +14,7 @@ var PlayerLevelComplete = 0
 # Platformer Variables
 @onready var LevelZero = ""
 @onready var LevelOne = "res://Scenes/Levels/Level1.tscn"
-@onready var LevelTwo = "res://Scenes/Levels/level2.tscn"
+@onready var LevelTwo = "res://Scenes/Levels/Level2.tscn"
 @onready var LevelThree = "res://Scenes/Levels/Level3.tscn"
 
 

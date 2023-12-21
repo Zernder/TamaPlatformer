@@ -1,11 +1,13 @@
 [gd_scene load_steps=14 format=3 uid="uid://ba42eun6ljgrh"]
 
-[ext_resource type="Script" path="res://Scenes/Enemies and Hazards/sawblade.gd" id="1_8r5bk"]
 [ext_resource type="Texture2D" uid="uid://c4pex8px7euq3" path="res://Assets/Hazards/Traps/Saw/Sawblade.png" id="1_bl7wd"]
 [ext_resource type="Script" path="res://Scenes/Enemies and Hazards/PathFollow2D.gd" id="2_w17mx"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_oa3du"]
-radius = 18.2483
+[sub_resource type="Curve2D" id="Curve2D_xqvcw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 119.383, -80.6069, 0, 0, 0, 0, -11.1009, -80.6329, 0, 0, 0, 0, -11.1602, -6.19879, 0, 0, 0, 0, 86.0901, -8.68979, 0, 0, 0, 0, 120.591, -8.74539, 0, 0, 0, 0, 120.603, -9.7572, 0, 0, 0, 0, 120.99, -43.1468, 0, 0, 0, 0, 119.383, -80.6069)
+}
+point_count = 8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wut4h"]
 atlas = ExtResource("1_bl7wd")
@@ -71,31 +73,37 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="Sawblade" type="Path2D" groups=["Hazards"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_oa3du"]
+radius = 18.2483
+
+[node name="Sawblade" type="Node2D" groups=["Hazards"]]
 z_index = -5
 y_sort_enabled = true
-script = ExtResource("1_8r5bk")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="."]
+[node name="Path2D" type="Path2D" parent="."]
 position = Vector2(1, -3)
 rotation = 1.5593
+scale = Vector2(1, 1)
+curve = SubResource("Curve2D_xqvcw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+scale = Vector2(1, 1)
 rotates = false
 script = ExtResource("2_w17mx")
 
-[node name="Node2D" type="Node2D" parent="PathFollow2D"]
-rotation = -1.5593
-
-[node name="SawBlade Collision" type="Area2D" parent="PathFollow2D/Node2D" groups=["Hazards"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D" groups=["Hazards"]]
 y_sort_enabled = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Node2D/SawBlade Collision" groups=["Hazards"]]
-y_sort_enabled = true
-shape = SubResource("CircleShape2D_oa3du")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D/Node2D" groups=["Hazards"]]
-y_sort_enabled = true
-rotation = -0.0444092
+rotation = -1.60371
 sprite_frames = SubResource("SpriteFrames_v8t33")
 animation = &"On"
 autoplay = "On"
 frame_progress = 0.54298
+
+[node name="SawBlade Collision" type="Area2D" parent="." groups=["Hazards"]]
+y_sort_enabled = true
+position = Vector2(1, -3)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SawBlade Collision" groups=["Hazards"]]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_oa3du")
