@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://b5lt3rref2mfg"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_04wky"]
+
+[resource]
+script = ExtResource("1_04wky")
+starts = {}
+nodes = {}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = ""

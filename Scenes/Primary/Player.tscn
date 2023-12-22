@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cqsuqg31nvw21"]
+[gd_scene load_steps=20 format=3 uid="uid://cqsuqg31nvw21"]
 
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_x1wt7"]
+[ext_resource type="PackedScene" uid="uid://uangs8bisa2l" path="res://Scenes/Objects/PortalStone.tscn" id="3_dgeee"]
 [ext_resource type="Texture2D" uid="uid://c45r0ymk0dvfv" path="res://Assets/Fruit/Strawberry.png" id="3_orfwl"]
 [ext_resource type="PackedScene" uid="uid://b5xtf53x2acsy" path="res://Scenes/Primary/MobileControl.tscn" id="4_sr08a"]
 [ext_resource type="Texture2D" uid="uid://bgxilmq0g55af" path="res://Assets/Sprites/Tama.png" id="5_rne1y"]
@@ -131,26 +132,6 @@ light_mask = 3
 y_sort_enabled = true
 polygon = PackedVector2Array(2, 16, 6, 16, 6, 14, 8, 14, 8, 12, 8, 2, 6, 2, 6, -4, 4, -4, 2, -6, -4, -6, -6, -6, -6, 0, -6, 2, -10, 2, -10, 10, -8, 10, -8, 12, -4, 12, -4, 14, 2, 14)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = -4.0
-offset_top = -54.0
-offset_right = 7.0
-offset_bottom = -35.0
-scale = Vector2(1.3, 1.3)
-
-[node name="StrawberryCounter" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 10
-text = "0"
-
-[node name="Strawberry" type="Sprite2D" parent="HBoxContainer"]
-position = Vector2(0, 20)
-scale = Vector2(0.705104, 0.625)
-texture = ExtResource("3_orfwl")
-hframes = 23
-
 [node name="CollectionBubble" type="Area2D" parent="."]
 y_sort_enabled = true
 collision_mask = 3
@@ -177,6 +158,23 @@ autostart = true
 
 [node name="MobileControl" parent="." instance=ExtResource("4_sr08a")]
 visible = false
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI"]
+offset_right = 1152.0
+offset_bottom = 651.0
+
+[node name="Strawberry" type="Sprite2D" parent="GUI/HBoxContainer"]
+position = Vector2(37, 603)
+scale = Vector2(3, 3.044)
+texture = ExtResource("3_orfwl")
+region_enabled = true
+region_rect = Rect2(4.09252, 0.137492, 24.0357, 30.903)
+
+[node name="PortalStone" parent="GUI/HBoxContainer" instance=ExtResource("3_dgeee")]
+position = Vector2(1110, 604)
+scale = Vector2(5, 5)
 
 [connection signal="area_entered" from="CollectionBubble" to="." method="CollectionBubble"]
 [connection signal="area_entered" from="HitBox" to="." method="HitBox"]

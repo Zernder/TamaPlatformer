@@ -3548,7 +3548,6 @@ frame_progress = 0.54298
 y_sort_enabled = true
 position = Vector2(-8.76784e-05, -7.15256e-07)
 rotation = -1.5593
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hazards/SawBlades/Sawblade1/Path2D/PathFollow2D/SawBlade Collision" groups=["Hazards"]]
 y_sort_enabled = true
@@ -3582,7 +3581,6 @@ frame_progress = 0.54298
 y_sort_enabled = true
 position = Vector2(-8.76784e-05, -7.15256e-07)
 rotation = -1.5593
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hazards/SawBlades/Sawblade2/Path2D/PathFollow2D/SawBlade Collision" groups=["Hazards"]]
 y_sort_enabled = true

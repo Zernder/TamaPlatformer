@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://uangs8bisa2l"]
+
+[ext_resource type="Texture2D" uid="uid://bblsps16ibe1n" path="res://Assets/Items, Armor and equipment/magical items.png" id="1_t8i1g"]
+[ext_resource type="Script" path="res://Scenes/Objects/PortalStone.gd" id="1_vk1yu"]
+
+[sub_resource type="Animation" id="Animation_0tlq7"]
+resource_name = "New"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qttrs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rl0wp"]
+resource_name = "Used"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5r2s"]
+_data = {
+"New": SubResource("Animation_0tlq7"),
+"RESET": SubResource("Animation_qttrs"),
+"Used": SubResource("Animation_rl0wp")
+}
+
+[node name="PortalStone" type="Node2D"]
+script = ExtResource("1_vk1yu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t8i1g")
+region_enabled = true
+region_rect = Rect2(0.0652008, 47.9546, 16.2212, 15.0625)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n5r2s")
+}
+
+[node name="AbilityCooldown" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="AbilityCooldown" to="." method="AbilityCooldown"]

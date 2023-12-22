@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://q134oigbm12"]
+
+[ext_resource type="Texture2D" uid="uid://c45r0ymk0dvfv" path="res://Assets/Fruit/Strawberry.png" id="1_3hv8g"]
+[ext_resource type="PackedScene" uid="uid://uangs8bisa2l" path="res://Scenes/Objects/PortalStone.tscn" id="2_2huur"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 651.0
+
+[node name="Strawberry" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(37, 603)
+scale = Vector2(3, 3.044)
+texture = ExtResource("1_3hv8g")
+region_enabled = true
+region_rect = Rect2(4.09252, 0.137492, 24.0357, 30.903)
+
+[node name="PortalStone" parent="HBoxContainer" instance=ExtResource("2_2huur")]
+position = Vector2(1110, 604)
+scale = Vector2(5, 5)

@@ -76,7 +76,7 @@ func CollectionBubble(area):
 	if area is Strawberry_Class:
 		Strawberry += 1
 		area.queue_free()
-	get_node("HBoxContainer/StrawberryCounter").text = str(Strawberry)
+	#get_node("GUI/StrawberryCounter/StrawberryLabel").text = str(Strawberry)
 
 func HitBox(area):
 	if area.is_in_group("Hazards"):

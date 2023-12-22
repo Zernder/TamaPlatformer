@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://qe11hio07iju"
+path="res://.godot/imported/MasterQuest.dialogue-9d87b40ccdfe8c260801ef44efa45d45.tres"
+
+[deps]
+
+source_file="res://Dialogue/MasterQuest.dialogue"
+dest_files=["res://.godot/imported/MasterQuest.dialogue-9d87b40ccdfe8c260801ef44efa45d45.tres"]
+
+[params]
+
+defaults=true
