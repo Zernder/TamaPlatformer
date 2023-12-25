@@ -1,13 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba42eun6ljgrh"]
+[gd_scene load_steps=13 format=3 uid="uid://ba42eun6ljgrh"]
 
 [ext_resource type="Texture2D" uid="uid://c4pex8px7euq3" path="res://Assets/Hazards/Traps/Saw/Sawblade.png" id="1_bl7wd"]
 [ext_resource type="Script" path="res://Scenes/Enemies and Hazards/PathFollow2D.gd" id="2_w17mx"]
-
-[sub_resource type="Curve2D" id="Curve2D_xqvcw"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 119.383, -80.6069, 0, 0, 0, 0, -11.1009, -80.6329, 0, 0, 0, 0, -11.1602, -6.19879, 0, 0, 0, 0, 86.0901, -8.68979, 0, 0, 0, 0, 120.591, -8.74539, 0, 0, 0, 0, 120.603, -9.7572, 0, 0, 0, 0, 120.99, -43.1468, 0, 0, 0, 0, 119.383, -80.6069)
-}
-point_count = 8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wut4h"]
 atlas = ExtResource("1_bl7wd")
@@ -83,7 +77,6 @@ y_sort_enabled = true
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(1, -3)
 rotation = 1.5593
-curve = SubResource("Curve2D_xqvcw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(119.383, -80.6069)

@@ -1,0 +1,45 @@
+Game Design Document: "Fuyuki's Adventure in Dimension X"
+
+Concept Overview:
+"Fuyuki's Adventure in Dimension X" is a vibrant, pixel art-style 2D platformer following Fuyuki Tamaki, a purple-haired cat girl ninja, navigating biomes corrupted by a dark presence. Players utilize Fuyuki's teleportation gem to traverse and battle enemies in diverse, manipulated landscapes.
+
+
+
+Gameplay Mechanics:
+
+Teleportation Mechanic: Fuyuki throws a gem to create teleport spots in an arc. Upon landing, the gem creates a spot for Fuyuki to teleport to, with a 10-second cooldown. Enemies can be targeted with the gem for instant teleportation and a powerful attack using her katana.
+Combat Elements: Engage in close combat using Fuyuki's katana. Teleportation onto enemies enables strategic and efficient takedowns.
+Visual Style and Art:
+
+Bright, cartoony pixel art brings life to the corrupted biomes, showcasing deserts, forests, keeps, and castles twisted by dark influences.
+Fuyuki's design highlights her agility and cat-like reflexes, visually complementing her teleportation abilities.
+
+
+
+Audio and Music:
+
+The soundtrack will complement the gameplay and environments, enhancing the immersive experience. Themes could range from energetic tracks during action sequences to ambient tunes in corrupted areas.
+Level Design:
+
+Diverse levels will incorporate platforming challenges, puzzles, and combat scenarios in corrupted biomes, encouraging strategic teleportation and combat maneuvers.
+The corrupted environments will feature twisted elements that challenge players' platforming and combat skills.
+
+
+
+Progression and Rewards:
+
+Progression involves mastering teleportation mechanics, improving combat skills, and finding collectibles that enhance Fuyuki's abilities.
+Upgrades and power-ups discovered throughout levels provide advantages in combat and traversal.
+Technical Details:
+
+Developed for PC with potential adaptation for mobile platforms using touch controls.
+Utilizes a 2D platformer framework and pixel art design for smooth gameplay.
+Monetization:
+
+Set to be an affordable game, priced between $4.99 and $9.99 for accessibility and affordability.
+Development Roadmap:
+
+Development stages encompass conceptualization, prototyping, asset creation, coding, testing, and polishing.
+Team and Responsibilities:
+
+The development will be a solo endeavor, handling all aspects of design, development, art, sound, and testing.

@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 @onready var player = $"."
 @onready var timer = $HitBox/Timer
+@onready var StoneDestination = $StoneThrow
+@onready var PortalStone = preload("res://Scenes/Objects/PortalStone.tscn")
 
 var Strawberry = 0
 var death = 0
@@ -23,6 +25,7 @@ func _physics_process(delta):
 	Movement()
 	Sprint()
 	Pause()
+	throwGem(delta)
 	move_and_slide()
 	
 
@@ -83,3 +86,15 @@ func HitBox(area):
 		hide()
 		player.global_position = Spawn.global_position
 		show()
+
+func throwGem(_delta):
+	var mouse_pos = get_global_mouse_position()
+	StoneDestination.look_at(mouse_pos)
+	
+	if Input.is_action_just_pressed("Throw"):
+		print("Pew")
+		var PortalInstance = PortalStone.instantiate()
+		PortalInstance.rotation = StoneDestination.rotation
+		PortalInstance.global_position = StoneDestination.global_position
+		add_child(PortalInstance)
+		await get_tree().create_timer(1).timeout

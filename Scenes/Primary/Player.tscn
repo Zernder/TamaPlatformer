@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://cqsuqg31nvw21"]
+[gd_scene load_steps=19 format=3 uid="uid://cqsuqg31nvw21"]
 
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_x1wt7"]
-[ext_resource type="PackedScene" uid="uid://uangs8bisa2l" path="res://Scenes/Objects/PortalStone.tscn" id="3_dgeee"]
-[ext_resource type="Texture2D" uid="uid://c45r0ymk0dvfv" path="res://Assets/Fruit/Strawberry.png" id="3_orfwl"]
+[ext_resource type="PackedScene" uid="uid://q134oigbm12" path="res://Scenes/Menu's/GUI.tscn" id="4_rb0yh"]
 [ext_resource type="PackedScene" uid="uid://b5xtf53x2acsy" path="res://Scenes/Primary/MobileControl.tscn" id="4_sr08a"]
 [ext_resource type="Texture2D" uid="uid://bgxilmq0g55af" path="res://Assets/Sprites/Tama.png" id="5_rne1y"]
 
@@ -126,7 +125,7 @@ limit_bottom = 699
 limit_smoothed = true
 drag_horizontal_enabled = true
 
-[node name="Collision" type="CollisionPolygon2D" parent="."]
+[node name="Collision" type="CollisionPolygon2D" parent="." groups=["player"]]
 visible = false
 light_mask = 3
 y_sort_enabled = true
@@ -144,39 +143,22 @@ position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_f05lv")
 animation = &"idle"
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="." groups=["player"]]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="HitBox"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="HitBox" groups=["player"]]
 polygon = PackedVector2Array(2, 16, 10, 16, 10, 4, 10, -10, -8, -10, -8, 16)
 
 [node name="Timer" type="Timer" parent="HitBox"]
 one_shot = true
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
 [node name="MobileControl" parent="." instance=ExtResource("4_sr08a")]
 visible = false
 
-[node name="GUI" type="CanvasLayer" parent="."]
+[node name="StoneThrow" type="Marker2D" parent="."]
+scale = Vector2(2, 2)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GUI"]
-offset_right = 1152.0
-offset_bottom = 651.0
-
-[node name="Strawberry" type="Sprite2D" parent="GUI/HBoxContainer"]
-position = Vector2(37, 603)
-scale = Vector2(3, 3.044)
-texture = ExtResource("3_orfwl")
-region_enabled = true
-region_rect = Rect2(4.09252, 0.137492, 24.0357, 30.903)
-
-[node name="PortalStone" parent="GUI/HBoxContainer" instance=ExtResource("3_dgeee")]
-position = Vector2(1110, 604)
-scale = Vector2(5, 5)
+[node name="GUI" parent="." instance=ExtResource("4_rb0yh")]
 
 [connection signal="area_entered" from="CollectionBubble" to="." method="CollectionBubble"]
 [connection signal="area_entered" from="HitBox" to="." method="HitBox"]
 [connection signal="timeout" from="HitBox/Timer" to="." method="RespawnTimer"]
-[connection signal="timeout" from="Timer" to="." method="AirJumpReset"]
